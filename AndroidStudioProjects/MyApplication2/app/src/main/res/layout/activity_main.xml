@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="383dp"
+        android:layout_height="214dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="488dp"
+        android:text="Enter a value into USD or LBP to convert it to the other value"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Enter a value into USD or LBP to convert it to the other value" />
+
+    <TextView
+        android:id="@+id/usd"
+        android:layout_width="108dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="289dp"
+        android:layout_marginBottom="73dp"
+        android:text="Enter USD value to convert into LBP"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/lbp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome" />
+
+    <TextView
+        android:id="@+id/lbp"
+        android:layout_width="112dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="276dp"
+        android:layout_marginEnd="283dp"
+        android:layout_marginBottom="156dp"
+        android:text="Enter LBP value to convert into USD"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome" />
+
+    <TextView
+        android:id="@+id/rate"
+        android:layout_width="265dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginBottom="50dp"
+        android:text="Current rate: 1 USD = 22,000 LBP"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/lbp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usd" />
+
+    <EditText
+        android:id="@+id/usdInput"
+        android:layout_width="210dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="94dp"
+        android:layout_marginEnd="79dp"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:hint="USD"
+        android:inputType="textPersonName"
+        android:onClick="emptyLbp"
+        app:layout_constraintBottom_toTopOf="@+id/rate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/usd"
+        app:layout_constraintTop_toBottomOf="@+id/welcome" />
+
+    <EditText
+        android:id="@+id/lbpInput"
+        android:layout_width="214dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="57dp"
+        android:layout_marginEnd="69dp"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:hint="LBP"
+        android:inputType="textPersonName"
+        android:onClick="emptyUsd"
+        app:layout_constraintBottom_toTopOf="@+id/convert"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/lbp"
+        app:layout_constraintTop_toBottomOf="@+id/rate" />
+
+    <Button
+        android:id="@+id/convert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="157dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="73dp"
+        android:onClick="convert"
+        android:text="Convert"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbpInput" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
