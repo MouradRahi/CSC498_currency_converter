@@ -29,8 +29,11 @@ public class MainActivity extends AppCompatActivity {
 
         if(usd_amount.length()>0 && lbp_amount.length()==0) {
             try{
-            double usd = Double.parseDouble(usd_amount);
-            lbp_input.setText(usd * 22000 + " LBP");
+                double usd = Double.parseDouble(usd_amount);
+                lbp_input.setText(usd * 22000 + "");
+                toast=Toast.makeText(getApplicationContext(),usd+" USD is "+usd * 22000 + " LBP",Toast.LENGTH_SHORT);
+                toast.show();
+                usd_input.setText("");
             }catch(NumberFormatException e){
                 usd_input.setText("");
                 toast=Toast.makeText(getApplicationContext(),"Enter a number in only one of the fields",Toast.LENGTH_SHORT);
@@ -40,7 +43,10 @@ public class MainActivity extends AppCompatActivity {
         else if(usd_amount.length()==0 && lbp_amount.length()>0){
             try{
                 double lbp = Double.parseDouble(lbp_amount);
-                usd_input.setText(lbp / 22000 + " USD");
+                usd_input.setText(lbp / 22000+"");
+                toast=Toast.makeText(getApplicationContext(),lbp+" LBP is "+lbp / 22000 + " USD",Toast.LENGTH_SHORT);
+                toast.show();
+                lbp_input.setText("");
             }catch(NumberFormatException e){
                 lbp_input.setText("");
                 toast=Toast.makeText(getApplicationContext(),"Enter a number in only one of the fields",Toast.LENGTH_SHORT);
@@ -49,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
         else if(usd_amount.length()==0 && lbp_amount.length()==0){
-            toast=Toast.makeText(getApplicationContext(),"Enter a value in one of the fields",Toast.LENGTH_SHORT);
+            toast=Toast.makeText(getApplicationContext(),"Enter a value in only one of the fields",Toast.LENGTH_SHORT);
             toast.show();
         }
         else if(usd_amount.length()>0 && lbp_amount.length()>0){
